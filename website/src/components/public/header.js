@@ -15,7 +15,7 @@ const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-main">
       <NavLink to="/home" className="nav-link">
-        <img src="./images/logo.png" alt="Logo" style={logo} />
+        <img src="/images/logo.png" alt="Logo" style={logo} />
       </NavLink>
       <button
         className="navbar-toggler"
@@ -57,7 +57,7 @@ const NavBar = () => {
 
 // Styles
 const logo = {
-  width: "250px",
+  width: "200px",
   position: "absolute",
   top: 10,
   left: 10,

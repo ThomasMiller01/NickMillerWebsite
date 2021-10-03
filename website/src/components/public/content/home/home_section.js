@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Other from "../../../other";
 
-class HomeSection extends React.Component {
+class HomeSection extends Component {
   constructor(props) {
     super();
     this.other = new Other();

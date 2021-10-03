@@ -8,7 +8,7 @@ import Other from "../../../other";
 import HomeTop from "./home_top";
 import HomeSection from "./home_section";
 
-class Home extends React.Component {
+class Home extends Component {
   constructor(props) {
     super();
     this.props = props;
