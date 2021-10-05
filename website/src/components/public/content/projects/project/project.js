@@ -17,6 +17,25 @@ class Project extends Component {
     this.getProject(this.props.match.params.projectName);
   }
 
+  componentDidUpdate() {
+    this.handleScrollAnchor();
+  }
+
+  handleScrollAnchor = () => {
+    const element = document.getElementById(
+      this.props.location.hash.replace("#", "")
+    );
+
+    if (element) {
+      setTimeout(() => {
+        window.scrollTo({
+          behavior: element ? "smooth" : "auto",
+          top: element ? element.offsetTop : 0,
+        });
+      }, 100);
+    }
+  };
+
   getProject = (title) => {
     this.other.getProjects().then((projects) => {
       let project = null;
