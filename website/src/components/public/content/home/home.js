@@ -44,9 +44,7 @@ class Home extends Component {
           {this.state.projects.map((project, index) => (
             <HomeSection
               key={index}
-              title={project.title}
-              description={project.description}
-              image={project.image}
+              project={project}
               random={(index + 1).toString()}
               first={index === 0 ? true : false}
             />

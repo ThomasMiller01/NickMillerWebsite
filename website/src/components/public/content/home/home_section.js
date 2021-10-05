@@ -11,29 +11,33 @@ class HomeSection extends Component {
     this.props = props;
 
     this.state = {
-      title: this.props.title,
-      description: this.props.description,
-      image: this.props.image,
-      random: this.props.random ? this.props.random : "1",
+      project: this.props.project,
+      first: this.props.first,
+      random: this.props.random,
     };
   }
 
   state = {
-    title: "Title",
-    description: "Description",
-    image: "",
+    project: {
+      title: "",
+      description: "",
+      image: "",
+      color: "",
+    },
+    random: "1",
+    first: true,
   };
 
   render() {
     return (
       <NavLink
         to={{
-          pathname: "/projects/" + this.state.title,
+          pathname: "/projects/" + this.state.project.title,
         }}
         className="project-section-link"
       >
-        <div style={section(this.props.first)}>
-          {this.getRandom(this.props.random)}
+        <div style={section(this.state.first)}>
+          {this.getRandom(this.state.random)}
         </div>
       </NavLink>
     );
@@ -46,14 +50,14 @@ class HomeSection extends Component {
 
     if (rnd === "1") {
       return (
-        <div style={section(this.props.first, "#5B7553")}>
+        <div style={section(this.state.first, this.state.project.color)}>
           {this.getText()}
           {this.getImage()}
         </div>
       );
     } else if (rnd === "2") {
       return (
-        <div style={section(this.props.first, "#5B7553")}>
+        <div style={section(this.state.first, this.state.project.color)}>
           {this.getImage()}
           {this.getText()}
         </div>
@@ -75,8 +79,8 @@ class HomeSection extends Component {
 
     return (
       <div style={text}>
-        <h1>{this.state.title}</h1>
-        {this.state.description}
+        <h1>{this.state.project.title}</h1>
+        {this.state.project.description}
       </div>
     );
   };
@@ -98,7 +102,11 @@ class HomeSection extends Component {
     return (
       <div style={image}>
         <div style={imageDiv}></div>
-        <img src={this.state.image} alt={this.state.title} style={img} />
+        <img
+          src={this.state.project.image}
+          alt={this.state.project.title}
+          style={img}
+        />
       </div>
     );
   };
@@ -135,6 +143,7 @@ let imgStyle = {
 };
 
 const section = (first, backgroundColor) => {
+  backgroundColor = "transparent";
   let style = {
     width: "100%",
     minHeight: "50vh",
@@ -142,7 +151,7 @@ const section = (first, backgroundColor) => {
     color: "#DDE0BD",
   };
   if (!first) {
-    style.marginTop = "50px";
+    style.marginTop = "15px";
   }
   return style;
 };
