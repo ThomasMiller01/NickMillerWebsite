@@ -4,4 +4,41 @@
 
 .footer-div {
   display: flex !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+@media (min-height: 460px) {
+  .footer-div {
+    padding-top: 0.2rem !important;
+    padding-bottom: 0.2rem !important;
+  }
+}
+
+@media (min-height: 560px) {
+  .footer-div {
+    padding-top: 0.4rem !important;
+    padding-bottom: 0.4rem !important;
+  }
+}
+
+@media (min-height: 660px) {
+  .footer-div {
+    padding-top: 0.6rem !important;
+    padding-bottom: 0.6rem !important;
+  }
+}
+
+@media (min-height: 760px) {
+  .footer-div {
+    padding-top: 0.8rem !important;
+    padding-bottom: 0.8rem !important;
+  }
+}
+
+@media (min-height: 850px) {
+  .footer-div {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
 }
