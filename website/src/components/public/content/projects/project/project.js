@@ -3,15 +3,18 @@ import React, { Component } from "react";
 import ContentWrapper from "../../content_wrapper";
 import Other from "../../../../other";
 
+import ImageSection from "./image_section";
+
 class Project extends Component {
   constructor(props) {
     super();
     this.props = props;
 
     this.other = new Other();
+  }
 
-    let projectName = this.props.match.params.projectName;
-    this.getProject(projectName);
+  componentDidMount() {
+    this.getProject(this.props.match.params.projectName);
   }
 
   getProject = (title) => {
@@ -27,7 +30,10 @@ class Project extends Component {
           title: project.title,
           description: project.description,
           description_big: project.description_big,
-          image: project.image,
+          images: {
+            header: project.images.header,
+            images: project.images.images,
+          },
           color: project.color,
         });
       } else {
@@ -40,7 +46,10 @@ class Project extends Component {
     title: "",
     description: "",
     description_big: "",
-    image: "",
+    images: {
+      header: "",
+      images: [],
+    },
     color: "",
   };
 
@@ -49,12 +58,53 @@ class Project extends Component {
       <React.Fragment>
         <title>{this.state.title}</title>
         <ContentWrapper>
-          <h1>{this.state.title}</h1>
-          <p>{this.state.description_big}</p>
+          <div style={headerImage(this.state.images.header)} />
+          <div style={titleStyle}>
+            <h1>{this.state.title}</h1>
+          </div>
+          <div
+            style={descriptionStyle}
+            dangerouslySetInnerHTML={{ __html: this.state.description_big }}
+          />
+          <div style={imagesStyle}>
+            {this.state.images.images.map((image, index) => (
+              <ImageSection image={image} key={index} />
+            ))}
+          </div>
         </ContentWrapper>
       </React.Fragment>
     );
   }
 }
+
+const imagesStyle = {
+  width: "100%",
+  padding: "15px",
+};
+
+const titleStyle = {
+  width: "100%",
+  textAlign: "center",
+  margin: "15px 0",
+};
+
+const descriptionStyle = {
+  width: "70%",
+  margin: "0 auto",
+};
+
+const headerImage = (header) => {
+  return {
+    width: "100%",
+    height: "30vh",
+    backgroundImage: "url('" + header + "')",
+    backgroundRepeat: "no-repeat",
+    backgroundAttachment: "fixed",
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    margin: 0,
+    padding: 0,
+  };
+};
 
 export default Project;

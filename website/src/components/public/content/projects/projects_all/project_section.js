@@ -15,7 +15,9 @@ class ProjectSection extends Component {
       this.state = {
         title: project.title,
         description: project.description,
-        image: project.image,
+        images: {
+          thumbnail: project.images.thumbnail,
+        },
         color: project.color,
       };
     }
@@ -45,7 +47,7 @@ class ProjectSection extends Component {
           <div style={container}>
             <div>
               <img
-                src={this.state.image}
+                src={this.state.images.thumbnail}
                 alt={this.state.title}
                 style={image}
               />

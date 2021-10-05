@@ -13,7 +13,9 @@ class ProjectsAll extends Component {
     this.props = props;
 
     this.other = new Other();
+  }
 
+  componentDidMount() {
     this.other.getProjects().then((projects) => {
       this.setState({ projects });
     });

@@ -21,7 +21,9 @@ class HomeSection extends Component {
     project: {
       title: "",
       description: "",
-      image: "",
+      images: {
+        thumbnail: "",
+      },
       color: "",
     },
     random: "1",
@@ -103,7 +105,7 @@ class HomeSection extends Component {
       <div style={image}>
         <div style={imageDiv}></div>
         <img
-          src={this.state.project.image}
+          src={this.state.project.images.thumbnail}
           alt={this.state.project.title}
           style={img}
         />
