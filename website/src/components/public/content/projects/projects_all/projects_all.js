@@ -31,7 +31,7 @@ class ProjectsAll extends Component {
           <ProjectsBackground>
             <div style={sectionContainer(this.other.getMobile())}>
               {this.state.projects.map((project, index) => (
-                <ProjectSection project={project} />
+                <ProjectSection project={project} key={index} />
               ))}
             </div>
           </ProjectsBackground>
