@@ -21,14 +21,23 @@ class ImageSection extends Component {
   render() {
     return (
       <div style={imageSectionStyle}>
-        <img src={this.state.image.url} alt={this.state.image.url} />
+        <img
+          src={this.state.image.url}
+          alt={this.state.image.url}
+          style={imageStyle}
+        />
       </div>
     );
   }
 }
 
+const imageStyle = {
+  maxWidth: "100%",
+};
+
 const imageSectionStyle = {
-  margin: "10px",
+  margin: "10px auto",
+  width: "90vw",
 };
 
 export default ImageSection;

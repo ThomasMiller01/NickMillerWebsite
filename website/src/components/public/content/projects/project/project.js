@@ -62,10 +62,12 @@ class Project extends Component {
           <div style={titleStyle}>
             <h1>{this.state.title}</h1>
           </div>
-          <div
-            style={descriptionStyle}
-            dangerouslySetInnerHTML={{ __html: this.state.description_big }}
-          />
+          <div style={descriptionWrapperStyle}>
+            <div
+              style={descriptionStyle}
+              dangerouslySetInnerHTML={{ __html: this.state.description_big }}
+            />
+          </div>
           <div style={imagesStyle}>
             {this.state.images.images.map((image, index) => (
               <ImageSection image={image} key={index} />
@@ -88,9 +90,14 @@ const titleStyle = {
   margin: "15px 0",
 };
 
+const descriptionWrapperStyle = {
+  width: "85%",
+  margin: "15px auto",
+};
+
 const descriptionStyle = {
-  width: "70%",
   margin: "0 auto",
+  minWidth: "67vw",
 };
 
 const headerImage = (header) => {
