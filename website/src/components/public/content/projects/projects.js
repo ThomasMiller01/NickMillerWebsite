@@ -1,8 +1,10 @@
 import React from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 
-import Header from "../../header";
-import Footer from "../../footer";
+import "./projects.css";
+
+import Header from "../../header/header";
+import Footer from "../../footer/footer";
 import Error from "../../../error";
 
 import ProjectsAll from "./projects_all/projects_all";

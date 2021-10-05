@@ -1,7 +1,7 @@
 import React from "react";
 
-import Header from "../../header";
-import Footer from "../../footer";
+import Header from "../../header/header";
+import Footer from "../../footer/footer";
 import ContentWrapper from "../content_wrapper";
 
 const a = () => {

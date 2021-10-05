@@ -1,0 +1,12 @@
+.project-section:hover {
+  border: 1px solid transparent !important;
+}
+
+.project-section-link {
+  color: #dde0bd;
+}
+
+.project-section-link:hover {
+  text-decoration: none !important;
+  color: #dde0bd;
+}

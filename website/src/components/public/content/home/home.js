@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 
-import Header from "../../header";
-import Footer from "../../footer";
+import "./home.css";
+
+import Header from "../../header/header";
+import Footer from "../../footer/footer";
 import ContentWrapper from "../content_wrapper";
 import Other from "../../../other";
 

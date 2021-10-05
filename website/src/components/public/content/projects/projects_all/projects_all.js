@@ -43,14 +43,17 @@ class ProjectsAll extends Component {
 
 const sectionContainer = (isMobile) => {
   let width = "85%";
+  let textAlign = "left";
 
   if (isMobile) {
     width = "100%";
+    textAlign = "center";
   }
 
   return {
     width: width,
     margin: "5vh auto 0 auto",
+    textAlign: textAlign,
   };
 };
 

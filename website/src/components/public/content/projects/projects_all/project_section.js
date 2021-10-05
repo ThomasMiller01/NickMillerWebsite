@@ -79,6 +79,7 @@ const section = (backgroundColor, isMobile) => {
 
   return {
     margin: "15px",
+    textAlign: "left",
     padding: 0,
     width: width,
     border: "1px solid #dde0bd",
