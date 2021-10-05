@@ -30,6 +30,8 @@ class Project extends Component {
           image: project.image,
           color: project.color,
         });
+      } else {
+        this.props.history.replace("/projects/all");
       }
     });
   };

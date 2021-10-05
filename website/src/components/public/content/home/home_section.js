@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 
 import Other from "../../../other";
 
@@ -25,9 +26,16 @@ class HomeSection extends Component {
 
   render() {
     return (
-      <div style={section(this.props.first)}>
-        {this.getRandom(this.props.random)}
-      </div>
+      <NavLink
+        to={{
+          pathname: "/projects/" + this.state.title,
+        }}
+        className="project-section-link"
+      >
+        <div style={section(this.props.first)}>
+          {this.getRandom(this.props.random)}
+        </div>
+      </NavLink>
     );
   }
 
