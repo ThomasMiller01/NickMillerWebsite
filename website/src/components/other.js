@@ -13,6 +13,16 @@ export default class Other {
       });
   };
 
+  getAboutMe = () => {
+    return fetch("/data.json")
+      .then((response) => {
+        return response.json();
+      })
+      .then((json) => {
+        return json.aboutme;
+      });
+  };
+
   getMobile() {
     return this.isMobile;
   }
