@@ -16,9 +16,6 @@ class ScrollToTop extends Component {
         this.props.location.hash.replace("#", "")
       );
 
-      console.log("hash", this.props.location.hash);
-      console.log("element", element);
-
       if (element) {
         setTimeout(() => {
           window.scrollTo({

@@ -3,10 +3,10 @@
 }
 
 .project-section-link {
+  text-decoration: none !important;
   color: #dde0bd;
 }
 
 .project-section-link:hover {
-  text-decoration: none !important;
   color: #dde0bd;
 }
