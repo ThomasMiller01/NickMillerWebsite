@@ -23,12 +23,14 @@ class AboutMeSection extends Component {
   render() {
     let descriptionClass =
       "accordion-collapse collapse" + (this.state.show ? " show" : "");
+    let buttonClass =
+      "accordion-button nc" + (this.state.show ? "" : " collapsed");
 
     return (
-      <div className="accordion-item">
+      <div className="accordion-collapse">
         <h2 className="accordion-header">
           <button
-            className="accordion-button"
+            className={buttonClass}
             type="button"
             data-bs-toggle="collapse"
             data-bs-target={"#am-a-p" + this.state.key.toString()}

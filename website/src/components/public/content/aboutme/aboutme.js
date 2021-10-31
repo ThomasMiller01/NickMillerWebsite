@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import "./aboutme.css";
+
 import Other from "../../../other";
 
 import Header from "../../header/header";
@@ -18,6 +20,7 @@ class AboutMe extends Component {
   componentDidMount() {
     this.other.getAboutMe().then((aboutme) => {
       this.setState({
+        description: aboutme.description,
         sections: aboutme.sections,
         image: aboutme.image,
         headerImage: aboutme.header,
@@ -26,6 +29,7 @@ class AboutMe extends Component {
   }
 
   state = {
+    description: "",
     sections: [],
     image: "",
     headerImage: "",
@@ -48,6 +52,7 @@ class AboutMe extends Component {
                 />
               </div>
               <div style={descriptionContainer}>
+                <div>{this.state.description}</div>
                 <div className="accordion">
                   {this.state.sections.map((section, index) => (
                     <AboutMeSection
@@ -68,28 +73,33 @@ class AboutMe extends Component {
 }
 
 const imageContainer = {
-  marginLeft: "5%",
-  width: "30%",
+  marginLeft: "10%",
+  width: "25%",
   height: "100%",
   display: "inline-block",
   verticalAlign: "top",
 };
 
 const image = {
-  width: "70%",
+  width: "80%",
+  borderRadius: "30px",
 };
 
 const descriptionContainer = {
-  marginRight: "5%",
-  width: "60%",
+  marginRight: "10%",
+  width: "55%",
   height: "100%",
   display: "inline-block",
+  backgroundColor: "#303036",
+  color: "#DDE0BD",
+  padding: "15px",
+  borderRadius: "10px",
 };
 
 const content = {
   width: "100%",
   minHeight: "63.5vh",
-  background: "green",
+  padding: "30px",
 };
 
 const header = (headerImage) => {

@@ -38,9 +38,7 @@ class HomeSection extends Component {
         }}
         className="project-section-link"
       >
-        <div style={section(this.state.first)}>
-          {this.getRandom(this.state.random)}
-        </div>
+        {this.getRandom(this.state.random)}
       </NavLink>
     );
   }
@@ -52,14 +50,26 @@ class HomeSection extends Component {
 
     if (rnd === "1") {
       return (
-        <div style={section(this.state.first, this.state.project.color)}>
+        <div
+          style={section(
+            this.state.first,
+            this.state.project.color,
+            this.other
+          )}
+        >
           {this.getText()}
           {this.getImage()}
         </div>
       );
     } else if (rnd === "2") {
       return (
-        <div style={section(this.state.first, this.state.project.color)}>
+        <div
+          style={section(
+            this.state.first,
+            this.state.project.color,
+            this.other
+          )}
+        >
           {this.getImage()}
           {this.getText()}
         </div>
@@ -144,8 +154,9 @@ let imgStyle = {
   width: "100%",
 };
 
-const section = (first, backgroundColor) => {
-  backgroundColor = "transparent";
+const section = (first, backgroundColor, other) => {
+  let rgb = other.hexToRgb(backgroundColor);
+  backgroundColor = "rgba(" + rgb.r + "," + rgb.g + "," + rgb.b + ",0.1)";
   let style = {
     width: "100%",
     minHeight: "50vh",

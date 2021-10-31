@@ -74,7 +74,7 @@ class Project extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <React.Fragment style>
         <title>{this.state.title}</title>
         <ContentWrapper>
           <div style={headerImage(this.state.images.header)} />
@@ -107,11 +107,13 @@ const titleStyle = {
   width: "100%",
   textAlign: "center",
   margin: "15px 0",
+  color: "#DDE0BD",
 };
 
 const descriptionWrapperStyle = {
   width: "85%",
   margin: "15px auto",
+  color: "#DDE0BD",
 };
 
 const descriptionStyle = {

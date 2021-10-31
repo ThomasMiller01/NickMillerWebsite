@@ -21,7 +21,7 @@ class ContentWrapper extends Component {
 const wrapper = {
   width: "100%",
   minHeight: "93.5vh",
-  backgroundColor: "#5B7553",
+  backgroundColor: "#2B2D42",
   padding: "0",
   margin: "0",
 };
