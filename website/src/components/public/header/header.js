@@ -27,7 +27,7 @@ const NavBar = () => {
         data-bs-target="#navbar"
         style={headerButtonStyle}
       >
-        <span class="navbar-toggler-icon"></span>
+        <i className="fas fa-bars"></i>
       </button>
       <div className="collapse navbar-collapse" id="navbar">
         <ul
@@ -64,8 +64,10 @@ const logo = {
 };
 
 const headerButtonStyle = {
-  margin: "10px",
+  margin: "10px 15px",
   padding: 0,
+  fontSize: "30px",
+  color: "#dde0bd",
 };
 
 const headerStyle = {
