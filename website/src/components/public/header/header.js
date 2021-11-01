@@ -27,9 +27,7 @@ const NavBar = () => {
         data-bs-target="#navbar"
         style={headerButtonStyle}
       >
-        <span className="navbar-toggler-icon">
-          <i className="fas fa-bars navbar-button"></i>
-        </span>
+        <span class="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbar">
         <ul
@@ -38,17 +36,17 @@ const NavBar = () => {
         >
           <li className="nav-item" style={liItemStyle}>
             <NavLink to="/home" className="nav-link">
-              Home <span className="sr-only">(current)</span>
+              Home
             </NavLink>
           </li>
           <li className="nav-item" style={liItemStyle}>
             <NavLink to="/projects" className="nav-link">
-              Projects <span className="sr-only">(current)</span>
+              Projects
             </NavLink>
           </li>
           <li className="nav-item" style={liItemStyle}>
             <NavLink to="/about" className="nav-link">
-              About Me <span className="sr-only">(current)</span>
+              About Me
             </NavLink>
           </li>
         </ul>
