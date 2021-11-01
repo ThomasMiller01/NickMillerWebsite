@@ -23,8 +23,8 @@ const NavBar = () => {
         className="navbar-toggler"
         id="navbartogglebtn"
         type="button"
-        data-toggle="collapse"
-        data-target="#navbar"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbar"
         style={headerButtonStyle}
       >
         <span className="navbar-toggler-icon">
@@ -66,7 +66,7 @@ const logo = {
 };
 
 const headerButtonStyle = {
-  margin: "2px 0px",
+  margin: "10px",
   padding: 0,
 };
 
@@ -77,7 +77,7 @@ const headerStyle = {
   height: "6.5vh",
 };
 
-const ulListStyle = { margin: "0 auto" };
+const ulListStyle = { margin: "0 auto", textAlign: "right" };
 
 const liItemStyle = { margin: "0 15px 0 15px" };
 
