@@ -44,14 +44,14 @@ class AboutMe extends Component {
           <div style={header(this.state.headerImage)}></div>
           <div style={container}>
             <div style={content}>
-              <div style={imageContainer}>
+              <div style={imageContainer} className="aboutme-image">
                 <img
                   src={this.state.image}
                   alt="Profile - Nick Miller"
                   style={image}
                 />
               </div>
-              <div style={descriptionContainer}>
+              <div style={descriptionContainer} className="aboutme-description">
                 <div>{this.state.description}</div>
                 <div className="accordion">
                   {this.state.sections.map((section, index) => (
@@ -73,8 +73,6 @@ class AboutMe extends Component {
 }
 
 const imageContainer = {
-  marginLeft: "10%",
-  width: "25%",
   height: "100%",
   display: "inline-block",
   verticalAlign: "top",
@@ -86,8 +84,6 @@ const image = {
 };
 
 const descriptionContainer = {
-  marginRight: "10%",
-  width: "55%",
   height: "100%",
   display: "inline-block",
   backgroundColor: "#303036",

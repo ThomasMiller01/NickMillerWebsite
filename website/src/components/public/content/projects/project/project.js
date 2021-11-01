@@ -74,7 +74,7 @@ class Project extends Component {
 
   render() {
     return (
-      <React.Fragment style>
+      <React.Fragment>
         <title>{this.state.title}</title>
         <ContentWrapper>
           <div style={headerImage(this.state.images.header)} />

@@ -22,3 +22,37 @@
 .accordion-body {
   background-color: transparent;
 }
+
+.aboutme-image {
+  margin: 15px;
+  display: inline-block;
+  text-align: center;
+}
+
+.aboutme-description {
+  width: 100%;
+  display: inline-block;
+}
+
+@media (min-width: 550px) {
+  .aboutme-image {
+    width: 45%;
+    margin: 0;
+  }
+
+  .aboutme-description {
+    width: 55%;
+  }
+}
+
+@media (min-width: 1300px) {
+  .aboutme-image {
+    width: 25%;
+    margin-left: 10%;
+  }
+
+  .aboutme-description {
+    width: 55%;
+    margin-right: 10%;
+  }
+}

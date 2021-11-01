@@ -258,7 +258,7 @@ const impressumContent = {
 };
 
 const impressumWrapper = {
-  padding: "8vh 2vw 2vh 2vw",
+  padding: "10vh 2vw 2vh 2vw",
 };
 
 export default Impressum;

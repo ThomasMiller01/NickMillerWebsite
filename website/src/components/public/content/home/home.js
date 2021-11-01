@@ -16,10 +16,10 @@ class Home extends Component {
     this.props = props;
 
     this.other = new Other();
+  }
 
+  loadProjects = () => {
     let projects = [];
-
-    // load projects
     this.other.getProjects().then((json) => {
       json.forEach((project) => {
         if (project.home) {
@@ -28,6 +28,10 @@ class Home extends Component {
       });
       this.setState({ projects });
     });
+  };
+
+  componentDidMount() {
+    this.loadProjects();
   }
 
   state = {
