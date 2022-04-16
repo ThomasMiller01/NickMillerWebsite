@@ -18,8 +18,7 @@ class ProjectsBackground extends Component {
 const backgroundImage = {
   width: "100%",
   minHeight: "100vh",
-  backgroundImage:
-    "url('https://images.pexels.com/photos/5711901/pexels-photo-5711901.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')",
+  backgroundImage: "url('/images/background/background.png')",
   backgroundRepeat: "no-repeat",
   backgroundAttachment: "fixed",
   backgroundPosition: "center",

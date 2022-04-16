@@ -28,14 +28,13 @@ const topLabel = {
   width: "100%",
   height: "100%",
   textAlign: "center",
-  color: "#DDE0BD",
+  color: "#07404B",
 };
 
 const topImage = {
   width: "100%",
-  height: "100vh",
-  backgroundImage:
-    "url('https://images.pexels.com/photos/4709389/pexels-photo-4709389.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')",
+  height: "80vh",
+  backgroundImage: "url('images/background/background.png')",
   backgroundRepeat: "no-repeat",
   backgroundAttachment: "fixed",
   backgroundPosition: "center",
@@ -46,7 +45,7 @@ const topImage = {
 
 const table = {
   width: "100%",
-  height: "45%",
+  height: "40%",
 };
 
 export default HomeTop;
