@@ -1,0 +1,113 @@
+.header {
+    height: 8vh;
+    min-height: 80px;
+    background-color: #213A43;
+    font-family: Fira Sans, sans-serif;
+
+    .brand {
+        height: 100%;
+        width: fit-content;
+        vertical-align: middle;
+        font-family: Roboto, sans-serif;
+        font-weight: 500;
+        color: #79b7ae;
+        font-size: 1.35rem;
+        line-height: 1.6;
+        letter-spacing: .125rem;
+        display: flex;
+        align-items: center;
+        margin-left: 35px;
+
+        @media (max-width: 600px) {
+            margin-left: 15px;
+        }
+
+        img {
+            width: 60px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        span {
+            vertical-align: middle;
+        }
+    }
+
+    .active {
+        color: #213A43 !important;
+        font-weight: 600;
+    }
+
+    /* Position and sizing of burger button */
+    .bm-burger-button {
+        position: fixed;
+        width: 30px;
+        height: 25px;
+        right: 25px;
+        top: 25px;
+    }
+
+    /* Color/shape of burger icon bars */
+    .bm-burger-bars {
+        background: #FFFFFF;
+        height: 15% !important;
+    }
+
+    /* Color/shape of burger icon bars on hover*/
+    .bm-burger-bars-hover {
+        opacity: 1 !important;
+    }
+
+    /* Position and sizing of clickable cross button */
+    .bm-cross-button {
+        height: 24px;
+        width: 24px;
+    }
+
+    /* Color/shape of close button cross */
+    .bm-cross {
+        background: #213A43 !important;
+    }
+
+    /*
+  Sidebar wrapper styles
+  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+  */
+    .bm-menu-wrap {
+        position: fixed;
+        height: 100%;
+        top: 0;
+    }
+
+    /* General sidebar styles */
+    .bm-menu {
+        background: #FFFFFF;
+        padding: 2.5em 1.5em 0;
+        font-size: 1.15em;
+        text-align: center;
+    }
+
+    /* Wrapper for item list */
+    .bm-item-list {
+        height: auto !important;
+        margin-top: 30vh;
+    }
+
+    /* Individual item */
+    .bm-item {
+        display: inline-block;
+        color: #64868e;
+        text-decoration: none;
+        margin: 15px 0;
+
+        &:hover {
+            color: #3C525A;
+        }
+    }
+
+    /* Styling of overlay */
+    .bm-overlay {
+        background: rgba(0, 0, 0, 0.3);
+        top: 0;
+    }
+}
