@@ -10,10 +10,12 @@ const Header = () => {
   return (
     <div className="header">
       <div className="brand">
-        <div className="content">
-          <img src="images/logo.png" alt="logo" />
-          <span>Nick Miller</span>
-        </div>
+        <NavLink to="/">
+          <div className="content">
+            <img src="images/logo.png" alt="logo" />
+            <span>Nick Miller</span>
+          </div>
+        </NavLink>
       </div>
       <Menu
         right

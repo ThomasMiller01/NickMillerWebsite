@@ -1,18 +1,37 @@
 .footer {
-    padding: 30px 30px;
+    padding: 20px 30px;
     background-color: #444444;
     color: #fff;
+    position: relative;
+    display: flex;
+    justify-content: right;
 
     @media (max-width: 600px) {
         padding-top: 20px;
         padding-bottom: 20px;
     }
 
+    .social {
+        display: flex;
+        align-items: center;
+
+        a {
+            margin-left: 5px;
+            color: #ffff;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
     .content {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         width: 60%;
         margin: 0 auto;
+        align-items: center;
 
         @media (max-width: 900px) {
             width: 80%;
@@ -25,6 +44,7 @@
         a {
             text-decoration: none;
             color: #fff;
+            margin: 0 20px;
 
             &:hover {
                 text-decoration: underline;

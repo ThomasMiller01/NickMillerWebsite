@@ -8,10 +8,6 @@
         height: 100%;
         width: fit-content;
         vertical-align: middle;
-        font-family: Roboto, sans-serif;
-        font-weight: 500;
-        color: #79b7ae;
-        font-size: 1.35rem;
         line-height: 1.6;
         letter-spacing: .125rem;
         display: flex;
@@ -30,6 +26,14 @@
 
         span {
             vertical-align: middle;
+            color: #79b7ae;
+            font-family: Roboto, sans-serif;
+            font-weight: 500;
+            font-size: 1.35rem;
+        }
+
+        a:active {
+            text-decoration: none;
         }
     }
 
