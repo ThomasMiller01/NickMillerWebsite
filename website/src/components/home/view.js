@@ -5,7 +5,7 @@ import Stack from "@mui/material/Stack";
 
 import "./style.scss";
 
-const Home = () => {
+const HomeView = () => {
   const topProjects = [
     {
       title: "Wetterstation",
@@ -52,7 +52,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="home">
+    <div className="home-view">
       <div className="top-section">
         <div className="content">
           <div className="image">
@@ -127,4 +127,4 @@ const Top3dPrintView = ({ title, link, date }) => {
   );
 };
 
-export default Home;
+export default HomeView;
