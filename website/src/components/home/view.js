@@ -3,35 +3,12 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
 import Stack from "@mui/material/Stack";
 
+import useHomeController from "./controller";
+
 import "./style.scss";
 
 const HomeView = () => {
-  const topProjects = [
-    {
-      title: "Wetterstation",
-      summary:
-        "Hier klicken und lostippen. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-      image:
-        "https://01a6e5d8d4.cbaul-cdnwnd.com/5cf4d7c74bc6ac946db91b3cb9413f37/200000008-367cc367d0/Wetterstation_2022-Jul-21_11-12-44AM-000_CustomizedView1531587654_png.webp?ph=01a6e5d8d4",
-      link: "/projekte/wetterstation",
-    },
-    {
-      title: "Smarthome-System",
-      summary:
-        "Hier klicken und lostippen. Illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem.",
-      image:
-        "https://01a6e5d8d4.cbaul-cdnwnd.com/5cf4d7c74bc6ac946db91b3cb9413f37/200000012-47c4d47c50/5886BA6E-7009-4036-A770-0FDED09153DC.webp?ph=01a6e5d8d4",
-      link: "/projekte/smarthome-system",
-    },
-    {
-      title: "Servo Lichtschalter",
-      summary:
-        "Hier klicken und lostippen. Magnam aliquam quaerat voluptatem ut enim ad minima veniam quis nostrum exercitationem ullam corporis.",
-      image:
-        "https://01a6e5d8d4.cbaul-cdnwnd.com/5cf4d7c74bc6ac946db91b3cb9413f37/200000113-1676a1676d/Capture.webp?ph=01a6e5d8d4",
-      link: "/projekte/servo-lichtschalter",
-    },
-  ];
+  const { topProjects } = useHomeController();
 
   const top3dPrints = [
     {
