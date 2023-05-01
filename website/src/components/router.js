@@ -5,6 +5,7 @@ import Body from "./body";
 
 import HomeView from "./home/view";
 import ProjectsView from "./projects/view";
+import ImpressumView from "./impressum/view";
 
 const Router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const Router = createBrowserRouter([
       {
         path: "/projekte",
         element: <ProjectsView />,
+      },
+      {
+        path: "/impressum",
+        element: <ImpressumView />,
       },
     ],
   },

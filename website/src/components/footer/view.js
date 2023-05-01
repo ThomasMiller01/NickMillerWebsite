@@ -7,9 +7,7 @@ const Footer = () => {
     <div className="footer">
       <div className="content">
         <div className="copyright">© 2023 Nick Miller</div>
-        <div className="impressum">
-          <NavLink to="/impressum">Impressum</NavLink>
-        </div>
+        <NavLink to="/impressum">Impressum</NavLink>
       </div>
     </div>
   );
