@@ -14,6 +14,10 @@ const useProjectModel = ({ projectSlug }) => {
         body: data.body,
         image: data.featured_image,
         published: data.published,
+        seo: {
+          title: data.seo_title,
+          description: data.meta_description,
+        },
       };
       setProject(project);
     });
@@ -23,11 +27,14 @@ const useProjectModel = ({ projectSlug }) => {
 };
 
 const projectBase = {
-  title: "M4 VR Gunstock",
-  body: "Test",
-  image:
-    "https://01a6e5d8d4.cbaul-cdnwnd.com/5cf4d7c74bc6ac946db91b3cb9413f37/200000233-d8b5ed8b62/700/1-393.webp?ph=01a6e5d8d4",
-  published: "20.12.2022",
+  title: "",
+  body: "",
+  image: "",
+  published: "",
+  seo: {
+    title: "",
+    description: "",
+  },
 };
 
 export default useProjectModel;
