@@ -65,7 +65,6 @@ const HomeView = () => {
       </div>
       <div className="quicklinks-section">
         <div className="links">
-          <ButtonView title="Kontakt" link="/kontakt" />
           <ButtonView title="Ausrüstung" link="/ausruestung" />
         </div>
       </div>

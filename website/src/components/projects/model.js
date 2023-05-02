@@ -12,7 +12,7 @@ const useProjectsModel = () => {
         title: x.title,
         image: x.featured_image,
         link: `/projekte/${x.slug}`,
-        date: parseDate(x.created),
+        date: parseDate(x.published),
       }));
 
       setProjects(projects);

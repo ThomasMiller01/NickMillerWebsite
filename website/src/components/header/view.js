@@ -1,18 +1,27 @@
 import { useState } from "react";
 import { slide as Menu } from "react-burger-menu";
 import { NavLink } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import "./style.scss";
 
 const Header = () => {
+  const { project } = useParams();
   const [isOpen, setIsOpen] = useState(false);
 
+  let headerBackground = {};
+
+  // transparent background on /projekte/:project page
+  if (project) {
+    headerBackground["backgroundColor"] = "transparent";
+  }
+
   return (
-    <div className="header">
+    <div className="header" style={headerBackground}>
       <div className="brand">
         <NavLink to="/">
           <div className="content">
-            <img src="images/logo.png" alt="logo" />
+            <img src="/images/logo.png" alt="logo" />
             <span>Nick Miller</span>
           </div>
         </NavLink>
@@ -45,20 +54,6 @@ const Header = () => {
           onClick={() => setIsOpen(false)}
         >
           Ausrüstung
-        </NavLink>
-        <NavLink
-          className="menu-item"
-          to="/kontakt"
-          onClick={() => setIsOpen(false)}
-        >
-          Kontakt
-        </NavLink>
-        <NavLink
-          className="menu-item"
-          to="/ueber-mich"
-          onClick={() => setIsOpen(false)}
-        >
-          Über Mich
         </NavLink>
       </Menu>
     </div>

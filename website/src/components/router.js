@@ -7,6 +7,7 @@ import HomeView from "./home/view";
 import ProjectsView from "./projects/view";
 import ImpressumView from "./impressum/view";
 import PrintingView from "./3dprinting/view";
+import ProjectView from "./project/view";
 
 const Router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const Router = createBrowserRouter([
       {
         path: "/projekte",
         element: <ProjectsView />,
+      },
+      {
+        path: "/projekte/:project",
+        element: <ProjectView />,
       },
       {
         path: "/3d-prints",
