@@ -2,13 +2,24 @@ import { NavLink } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
 import Stack from "@mui/material/Stack";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 
 import useHomeController from "./controller";
 
 import "./style.scss";
 
 const HomeView = () => {
-  const { topProjects, topPrints, parseDate } = useHomeController();
+  const {
+    topProjects,
+    latestPrints,
+    carouselIndex,
+    carouselSize,
+    topProjectsCount,
+    parseDate,
+    incrementCarousel,
+    decrementCarousel,
+  } = useHomeController();
 
   return (
     <div className="home-view">
@@ -29,18 +40,28 @@ const HomeView = () => {
           <h2 className="title">Top Projekte</h2>
           <div>
             <Box sx={{ flexGrow: 1 }} className="projects">
+              {carouselIndex !== 0 && (
+                <div className="previous">
+                  <NavigateBeforeIcon onClick={decrementCarousel} />
+                </div>
+              )}
               <Grid container spacing={5}>
                 {topProjects.map((project, index) => (
                   <TopProjectView key={index} {...project} />
                 ))}
               </Grid>
+              {carouselIndex !== topProjectsCount - carouselSize && (
+                <div className="next">
+                  <NavigateNextIcon onClick={incrementCarousel} />
+                </div>
+              )}
             </Box>
           </div>
         </div>
-        <div className="top-3dprints">
+        <div className="latest-3dprints">
           <Stack spacing={6} className="prints">
-            {topPrints.map((print, index) => (
-              <Top3dPrintView key={index} {...print} parseDate={parseDate} />
+            {latestPrints.map((print, index) => (
+              <Latest3dPrintView key={index} {...print} parseDate={parseDate} />
             ))}
           </Stack>
         </div>
@@ -74,7 +95,7 @@ const TopProjectView = ({ title, summary, image, link }) => {
   );
 };
 
-const Top3dPrintView = ({ title, link, date, parseDate }) => {
+const Latest3dPrintView = ({ title, link, date, parseDate }) => {
   return (
     <div className="print">
       <NavLink to={link} className="title">

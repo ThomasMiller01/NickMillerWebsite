@@ -87,6 +87,7 @@
         .top-projects {
             width: 80vw;
             margin: 0 auto;
+            overflow: hidden;
 
             @media (max-width: 600px) {
                 width: 100vw;
@@ -105,7 +106,64 @@
 
             .projects {
                 width: 80%;
+                min-height: 60vh;
                 margin: 0 auto;
+                position: relative;
+
+                svg {
+                    font-size: 50px;
+                }
+            }
+
+            .previous {
+                color: #ffff;
+                position: absolute;
+                top: 0;
+                left: -70px;
+                height: 100%;
+
+                svg {
+                    height: 100%;
+                    font-size: 60px;
+                }
+
+                @media (max-width: 600px) {
+                    left: -60px;
+                }
+
+                @media (max-width: 500px) {
+                    left: -50px;
+                }
+
+                @media (max-width: 400px) {
+                    left: -45px;
+                }
+            }
+
+            .next {
+                color: #ffff;
+                position: absolute;
+                top: 0;
+                right: -70px;
+                height: 100%;
+                width: fit-content;
+
+                svg {
+                    height: 100%;
+                    font-size: 60px;
+                }
+
+                @media (max-width: 600px) {
+                    right: -60px;
+                }
+
+                @media (max-width: 500px) {
+                    right: -50px;
+                }
+
+                @media (max-width: 400px) {
+                    right: -45px;
+                }
             }
 
             .project {
@@ -127,7 +185,7 @@
             }
         }
 
-        .top-3dprints {
+        .latest-3dprints {
             width: 80vw;
             margin: 0 auto;
             padding-top: 15vh;
@@ -153,6 +211,14 @@
                     text-decoration: none;
                     font-size: 2rem;
                     margin-bottom: 5px;
+
+                    @media (max-width: 600px) {
+                        font-size: 1.5rem;
+                    }
+
+                    @media (max-width: 900px) {
+                        font-size: 1.75rem;
+                    }
 
                     &:hover {
                         text-decoration: underline;

@@ -7,16 +7,18 @@ const useProjectsModel = () => {
   const [projects, setProjects] = useState([]);
 
   const getProjects = useCallback(() => {
-    client.post.list({ category_slug: "projekte" }).then((resp) => {
-      let projects = resp.data.data.map((x) => ({
-        title: x.title,
-        image: x.featured_image,
-        link: `/projekte/${x.slug}`,
-        date: parseDate(x.published),
-      }));
+    client.post
+      .list({ category_slug: "projekte", exclude_body: true, page_size: 10000 })
+      .then((resp) => {
+        let projects = resp.data.data.map((x) => ({
+          title: x.title,
+          image: x.featured_image,
+          link: `/projekte/${x.slug}`,
+          date: parseDate(x.published),
+        }));
 
-      setProjects(projects);
-    });
+        setProjects(projects);
+      });
   }, []);
 
   return { projects, getProjects };
