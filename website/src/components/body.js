@@ -10,7 +10,6 @@ const Body = () => {
 
   // auto scroll to top
   useEffect(() => {
-    console.log("scroll");
     window.scrollTo(0, 0);
   }, [pathname]);
 

@@ -8,25 +8,7 @@ import useHomeController from "./controller";
 import "./style.scss";
 
 const HomeView = () => {
-  const { topProjects } = useHomeController();
-
-  const top3dPrints = [
-    {
-      title: "Diy-Nightvision-Gear",
-      link: "/3d-prints/diy-nightvision-gear",
-      date: "13.01.2023",
-    },
-    {
-      title: "M4 VR Gunstock",
-      link: "/3d-prints/m4-vr-gunstock",
-      date: "20.12.2022",
-    },
-    {
-      title: "ESP8266 Deauther ",
-      link: "/3d-prints/3sp8266-deauther",
-      date: "26.09.2022",
-    },
-  ];
+  const { topProjects, topPrints, parseDate } = useHomeController();
 
   return (
     <div className="home-view">
@@ -57,8 +39,8 @@ const HomeView = () => {
         </div>
         <div className="top-3dprints">
           <Stack spacing={6} className="prints">
-            {top3dPrints.map((print, index) => (
-              <Top3dPrintView key={index} {...print} />
+            {topPrints.map((print, index) => (
+              <Top3dPrintView key={index} {...print} parseDate={parseDate} />
             ))}
           </Stack>
         </div>
@@ -92,13 +74,13 @@ const TopProjectView = ({ title, summary, image, link }) => {
   );
 };
 
-const Top3dPrintView = ({ title, link, date }) => {
+const Top3dPrintView = ({ title, link, date, parseDate }) => {
   return (
     <div className="print">
       <NavLink to={link} className="title">
         {title}
       </NavLink>
-      <span>{date}</span>
+      <span>{parseDate(date)}</span>
     </div>
   );
 };
