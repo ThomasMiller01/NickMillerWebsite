@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useState } from "react";
+import { useEffect, useState } from "react";
 
 import useHomeModel from "./model";
 
@@ -30,10 +30,14 @@ const useHomeController = () => {
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [carouselSize, setCarouselSize] = useState(3);
   const [carouselProjects, setCarouselProjects] = useState([]);
+  const [triggerCarouselAnimation, setTriggerCarouselAnimation] =
+    useState(true);
   const incrementCarousel = () => {
+    setTriggerCarouselAnimation(false);
     setCarouselIndex(carouselIndex + 1);
   };
   const decrementCarousel = () => {
+    setTriggerCarouselAnimation(false);
     setCarouselIndex(carouselIndex - 1);
   };
   useEffect(() => {
@@ -48,6 +52,12 @@ const useHomeController = () => {
     }
     setCarouselProjects(projects);
   }, [topProjects, carouselIndex, carouselSize]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setTriggerCarouselAnimation(true);
+    }, 10);
+  }, [carouselProjects]);
 
   const handleWindowResize = () => {
     if (window.innerWidth < 900 && carouselSize !== 1) {
@@ -81,9 +91,11 @@ const useHomeController = () => {
     carouselIndex,
     carouselSize,
     topProjectsCount: topProjects.length,
+    triggerCarouselAnimation,
     parseDate,
     incrementCarousel,
     decrementCarousel,
+    setCarouselIndex,
   };
 };
 

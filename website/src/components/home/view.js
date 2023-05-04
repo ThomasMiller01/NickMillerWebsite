@@ -4,6 +4,8 @@ import Grid from "@mui/material/Unstable_Grid2";
 import Stack from "@mui/material/Stack";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import Pagination from "@mui/material/Pagination";
+import { PaginationItem } from "@mui/material";
 
 import useHomeController from "./controller";
 
@@ -16,9 +18,11 @@ const HomeView = () => {
     carouselIndex,
     carouselSize,
     topProjectsCount,
+    triggerCarouselAnimation,
     parseDate,
     incrementCarousel,
     decrementCarousel,
+    setCarouselIndex,
   } = useHomeController();
 
   return (
@@ -46,10 +50,27 @@ const HomeView = () => {
                 </div>
               )}
               <Grid container spacing={5}>
-                {topProjects.map((project, index) => (
-                  <TopProjectView key={index} {...project} />
+                {topProjects.map((project) => (
+                  <TopProjectView
+                    key={project.link}
+                    {...project}
+                    triggerCarouselAnimation={triggerCarouselAnimation}
+                  />
                 ))}
               </Grid>
+              <Stack spacing={2}>
+                <Pagination
+                  count={topProjectsCount - carouselSize + 1}
+                  page={carouselIndex + 1}
+                  hidePrevButton
+                  hideNextButton
+                  className="pagination"
+                  readOnly
+                  renderItem={(item) => <PaginationItem {...item} page="" />}
+                  onChange={(event, value) => setCarouselIndex(value - 1)}
+                  size="small"
+                />
+              </Stack>
               {carouselIndex !== topProjectsCount - carouselSize && (
                 <div className="next">
                   <NavigateNextIcon onClick={incrementCarousel} />
@@ -83,9 +104,19 @@ const ButtonView = ({ title, link }) => {
   );
 };
 
-const TopProjectView = ({ title, summary, image, link }) => {
+const TopProjectView = ({
+  title,
+  summary,
+  image,
+  link,
+  triggerCarouselAnimation,
+}) => {
+  let className = "project";
+  if (triggerCarouselAnimation) {
+    className += " image-animation";
+  }
   return (
-    <Grid xs={12} md={6} lg={4} className="project">
+    <Grid xs={12} md={6} lg={4} className={className}>
       <NavLink to={link}>
         <img src={image} alt={title} />
       </NavLink>

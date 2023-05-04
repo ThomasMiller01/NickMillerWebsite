@@ -21,7 +21,10 @@ const useHomeModel = () => {
           summary: x.summary,
           image: x.featured_image,
           link: `/projekte/${x.slug}`,
+          date: x.published,
         }));
+
+        projects.sort((x) => new Date(x.date)).reverse();
 
         setTopProjects(projects);
       });
