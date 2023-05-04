@@ -23,14 +23,6 @@ const useHomeModel = () => {
           link: `/projekte/${x.slug}`,
         }));
 
-        projects = [
-          ...projects,
-          ...projects,
-          ...projects,
-          ...projects,
-          ...projects,
-        ];
-
         setTopProjects(projects);
       });
   }, []);
