@@ -18,10 +18,7 @@ const ImpressumView = () => {
         </p>
         <p>
           <strong>Kontakt:</strong> <br />
-          E-Mail:{" "}
-          <a href="mailto:mail.nickmiller01@gmail.com">
-            mail.nickmiller01@gmail.com
-          </a>
+          E-Mail: mail.nickmiller01[at]gmail.com
           <br />
         </p>
         <p>

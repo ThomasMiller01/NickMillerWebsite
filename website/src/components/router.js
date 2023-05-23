@@ -9,10 +9,12 @@ import ImpressumView from "./impressum/view";
 import PrintingView from "./3dprinting/view";
 import ProjectView from "./project/view";
 import EquipmentView from "./equipment/view";
+import NotFoundView from "./NotFound/view";
 
 const Router = createBrowserRouter([
   {
     element: <Body />,
+    errorElement: <NotFoundView />,
     children: [
       {
         path: "/",
