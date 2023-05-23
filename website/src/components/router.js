@@ -1,37 +1,47 @@
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import React from "react";
+import { createBrowserRouter } from "react-router-dom";
 
-import Error from "./error";
-import ScrollHandler from "./scrollHandler";
+import Body from "./body";
 
-import Home from "./public/content/home/home";
-import Projects from "./public/content/projects/projects";
-import AboutMe from "./public/content/aboutme/aboutme";
-import Impressum from "./public/content/impressum/impressum";
+import HomeView from "./home/view";
+import ProjectsView from "./projects/view";
+import ImpressumView from "./impressum/view";
+import PrintingView from "./3dprinting/view";
+import ProjectView from "./project/view";
+import EquipmentView from "./equipment/view";
+import NotFoundView from "./NotFound/view";
 
-const router = ({ history }) => {
-  return (
-    <BrowserRouter history={history}>
-      <ScrollHandler>
-        <Switch>
-          <Redirect exact from="/" to="/home" />
-          <Route path="/home" component={Home} />
-          <Route path="/projects" component={Projects} />
-          <Route path="/about" component={AboutMe} />
-          <Route path="/impressum" component={Impressum} />
-          <Route
-            render={() => (
-              <Error
-                file="App.js"
-                error_title="Bad Request"
-                error_number="404"
-                error_description="The server cannot process the request due to something that is perceived to be a client error."
-              />
-            )}
-          />
-        </Switch>
-      </ScrollHandler>
-    </BrowserRouter>
-  );
-};
+const Router = createBrowserRouter([
+  {
+    element: <Body />,
+    errorElement: <NotFoundView />,
+    children: [
+      {
+        path: "/",
+        element: <HomeView />,
+      },
+      {
+        path: "/projekte",
+        element: <ProjectsView />,
+      },
+      {
+        path: "/projekte/:project",
+        element: <ProjectView />,
+      },
+      {
+        path: "/3d-prints",
+        element: <PrintingView />,
+      },
+      {
+        path: "/ausruestung",
+        element: <EquipmentView />,
+      },
+      {
+        path: "/impressum",
+        element: <ImpressumView />,
+      },
+    ],
+  },
+]);
 
-export default router;
+export default Router;
