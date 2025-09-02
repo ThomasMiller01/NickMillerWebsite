@@ -14,12 +14,10 @@ import "./style.scss";
 const HomeView = () => {
   const {
     topProjects,
-    latestPrints,
     carouselIndex,
     carouselSize,
     topProjectsCount,
     triggerCarouselAnimation,
-    parseDate,
     incrementCarousel,
     decrementCarousel,
     setCarouselIndex,
@@ -79,13 +77,6 @@ const HomeView = () => {
             </Box>
           </div>
         </div>
-        <div className="latest-3dprints">
-          <Stack spacing={6} className="prints">
-            {latestPrints.map((print, index) => (
-              <Latest3dPrintView key={index} {...print} parseDate={parseDate} />
-            ))}
-          </Stack>
-        </div>
       </div>
       <div className="quicklinks-section">
         <div className="links">
@@ -123,17 +114,6 @@ const TopProjectView = ({
       <div className="title">{title}</div>
       <div className="summary">{summary}</div>
     </Grid>
-  );
-};
-
-const Latest3dPrintView = ({ title, link, date, parseDate }) => {
-  return (
-    <div className="print">
-      <NavLink to={link} className="title">
-        {title}
-      </NavLink>
-      <span>{parseDate(date)}</span>
-    </div>
   );
 };
 

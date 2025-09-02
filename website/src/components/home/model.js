@@ -24,7 +24,7 @@ const useHomeModel = () => {
           date: x.published,
         }));
 
-        projects.sort((x) => new Date(x.date)).reverse();
+        projects.sort((x) => new Date(x.date));
 
         setTopProjects(projects);
       });

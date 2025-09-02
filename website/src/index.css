@@ -9,4 +9,11 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+  display: inline-block;
+  width: 92%;
+  max-height: 70vh;
+  border-radius: 10px;
+  overflow: auto;
+  background-color: #282c34;
+  padding: 1rem;
 }

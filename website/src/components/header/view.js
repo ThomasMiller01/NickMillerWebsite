@@ -9,13 +9,6 @@ const Header = () => {
   const { project } = useParams();
   const [isOpen, setIsOpen] = useState(false);
 
-  let headerBackground = {};
-
-  // transparent background on /projekte/:project page
-  if (project) {
-    headerBackground["backgroundColor"] = "transparent";
-  }
-
   return (
     <React.Fragment>
       {!project && (
@@ -23,7 +16,7 @@ const Header = () => {
           <title>Nick Miller</title>
         </head>
       )}
-      <div className="header" style={headerBackground}>
+      <div className="header">
         <div className="brand">
           <NavLink to="/">
             <div className="content">
