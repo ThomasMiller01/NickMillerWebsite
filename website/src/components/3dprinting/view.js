@@ -19,14 +19,7 @@ const PrintingView = () => {
         <Box sx={{ flexGrow: 1 }} className="prints">
           <Grid container spacing={5}>
             {prints.map((print, index) => (
-              <React.Fragment key={index}>
-                {index !== 0 && index % 3 === 0 && (
-                  <Grid xs={12}>
-                    <Divider />
-                  </Grid>
-                )}
-                <PrintView {...print} />
-              </React.Fragment>
+              <PrintView key={index} {...print} />
             ))}
           </Grid>
         </Box>

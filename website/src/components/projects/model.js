@@ -32,7 +32,7 @@ const parseDate = (datestr) => {
   let year = datetime.getFullYear();
 
   date = date < 10 ? `0${date}` : `${date}`;
-  month = month < 10 ? `0${month}` : `${month}`;
+  month = month + 1 < 10 ? `0${month + 1}` : `${month + 1}`;
 
   return `${date}.${month}.${year}`;
 };

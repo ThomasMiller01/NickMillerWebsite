@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import hljs from "highlight.js";
+import "highlight.js/styles/github-dark.css";
 
 import useProjectController from "./controller";
 
@@ -10,6 +12,17 @@ const ProjectView = () => {
 
   const { project, parseDate } = useProjectController({ projectSlug });
 
+  useEffect(() => {
+    document.querySelectorAll("pre[class^='language-']").forEach((pre) => {
+      const code = pre.querySelector("code");
+      if (code && !code.className) {
+        code.className = pre.className; // move class from <pre> → <code>
+      }
+    });
+
+    hljs.highlightAll();
+  }, [project]);
+
   return (
     <React.Fragment>
       <head>
@@ -18,10 +31,6 @@ const ProjectView = () => {
       </head>
       <div className="project-view">
         <div className="thumbnail">
-          <div
-            className="image"
-            style={{ backgroundImage: `url(${project.image}` }}
-          />
           <div className="blur" />
           <div className="content">
             <div className="title">{project.title}</div>
